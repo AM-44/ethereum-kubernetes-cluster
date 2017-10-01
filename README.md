@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/kairen/kubereum.svg?branch=master)](https://travis-ci.org/kairen/kubereum)
 # Kubernetes + Ethereum = Kubereum
-This repos is containerize the Ethereum example. The goal is quickly setup a private Ethereum blockchain using Docker and Kubernetes.
+This repos is a containerized Ethereum Private Blockchain example. The goal is quickly setup a private Ethereum blockchain using Docker and Kubernetes.
 
 Support Feature:
 * Private network chain.
@@ -8,7 +8,7 @@ Support Feature:
 * Blockchain stats dashboard.
 * Solidity browser service.
 
-Example in my Lab:
+Example by Kairen:
 [![asciicast](https://asciinema.org/a/lRWNbs4bQmmS6ijQcyjdLqvsS.png)](https://asciinema.org/a/lRWNbs4bQmmS6ijQcyjdLqvsS?speed=2)
 
 ### Image build status
@@ -60,3 +60,19 @@ at block: 0 (Thu, 01 Jan 1970 00:00:00 UTC)
 > net.peerCount
 3
 ```
+-------------------------------------------------NEW GENESIS BLOCK COMMAND---------------------------------------------------
+geth --identity "genesis-node" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir "/path/to/.ethereum" --port "30303" --nodiscover --rpcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --networkid 1900 --nat "any" console
+
+------------------------------------------------GETH CONSOLE COMMANDS--------------------------------------------------------
+
+<Etherbase Account name> = personal.newAccount() // Create Etherbase Account
+
+miner.sethEtherbase(<Etherbase Account name>) // Set Etherbase address
+
+miner.start(2) // Start mining service and set 2 threads
+
+web3.fromWei(eth.getBalance(support), "ether") // Check Ether Balance
+
+admin.peers // Check current peers
+
+admin.nodeInfo.enode // Check enode address for Node in chain
