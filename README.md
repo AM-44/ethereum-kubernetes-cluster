@@ -65,7 +65,7 @@ geth --identity "genesis-node" --rpc --rpcport "8545" --rpccorsdomain "*" --data
 
 ------------------------------------------------GETH CONSOLE COMMANDS--------------------------------------------------------
 
-<Etherbase Account name> = personal.newAccount() // Create Etherbase Account
+(<Etherbase Account name>) = personal.newAccount() // Create Etherbase Account
 
 miner.sethEtherbase(<Etherbase Account name>) // Set Etherbase address
 
